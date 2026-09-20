@@ -93,18 +93,6 @@ const education = [
     title: "BSc (Honours): Mathematics",
     institution: "National University Of Bangladesh",
   },
-  {
-    period: "2019 — 2021",
-    title: "HSC: Science",
-    institution: "Naogaon Govt. College — Naogaon",
-    result: "GPA 5.00",
-  },
-  {
-    period: "2017 — 2019",
-    title: "SSC: Science",
-    institution: "Naogaon KD Govt. High School — Naogaon",
-    result: "GPA 5.00",
-  },
 ];
 
 function SectionHeading({
@@ -287,7 +275,7 @@ function Home() {
               {education.map((item, index) => (
                 <article className="education-item reveal" key={item.title}>
                   <div className="education-count">0{index + 1}</div>
-                  <div className="education-body"><p className="education-period">{item.period}</p><h3>{item.title}</h3><p>{item.institution}</p>{item.result && <span className="result-pill">{item.result}</span>}</div>
+                  <div className="education-body"><p className="education-period">{item.period}</p><h3>{item.title}</h3><p>{item.institution}</p></div>
                   <ChevronRight className="education-arrow" size={20} />
                 </article>
               ))}
