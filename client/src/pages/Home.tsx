@@ -118,6 +118,7 @@ function SectionHeading({
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [pointer, setPointer] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);
@@ -201,10 +202,20 @@ function Home() {
                 <span><Globe2 size={15} /> Bengali · English</span>
               </div>
             </div>
-            <div className="hero-visual reveal">
+            <div
+              className="hero-visual reveal"
+              onPointerMove={(event) => {
+                const rect = event.currentTarget.getBoundingClientRect();
+                setPointer({
+                  x: (event.clientX - rect.left) / rect.width - 0.5,
+                  y: (event.clientY - rect.top) / rect.height - 0.5,
+                });
+              }}
+              onPointerLeave={() => setPointer({ x: 0, y: 0 })}
+            >
               <div className="orbit orbit-one" />
               <div className="orbit orbit-two" />
-              <div className="portrait-frame">
+              <div className="portrait-frame" style={{ transform: `translate3d(${pointer.x * 12}px, ${pointer.y * 12}px, 18px) rotate(${4 + pointer.x * 3}deg) rotateX(${-pointer.y * 5}deg)` }}>
                 <img src="/manus-storage/image1_78af4ea1.png" alt="Asif Ull Haque" />
                 <div className="portrait-note">OPEN TO<br /><strong>WORK</strong></div>
               </div>
