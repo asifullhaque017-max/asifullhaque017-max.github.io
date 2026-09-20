@@ -1,6 +1,22 @@
 # Asif Ull Haque Portfolio
 
-This project is a Vite + React + TypeScript single-page portfolio built from the uploaded CV and the public LinkedIn profile. The source intentionally omits unverified projects, certifications, achievements, and experience details.
+This is a Vite + React + TypeScript single-page portfolio built from the uploaded CV and public LinkedIn profile. The source intentionally omits unverified projects, certifications, achievements, and experience details.
+
+## Live website
+
+The portfolio is published free with GitHub Pages at:
+
+`https://asifullhaque017-max.github.io/`
+
+Open that HTTPS link in any browser to view the website. Copy and share the same link in applications, email, WhatsApp, Facebook, LinkedIn, or a CV.
+
+## Repository
+
+The source repository is:
+
+`https://github.com/asifullhaque017-max/asifullhaque017-max.github.io`
+
+The repository is configured to deploy automatically with GitHub Actions whenever changes are pushed to the `main` branch.
 
 ## Run locally
 
@@ -17,26 +33,16 @@ pnpm build
 pnpm preview
 ```
 
-## Publish free with Netlify
+## How GitHub Pages deployment works
 
-1. Create a free account at [Netlify](https://www.netlify.com/).
-2. Push the project to a GitHub repository, or use Netlify's drag-and-drop deployment for the built `dist/public` folder after running `pnpm build`.
-3. For a GitHub-connected deployment, use `pnpm build` as the build command and `dist/public` as the publish directory.
-4. After deploying, open the live site and test the CV download, email link, phone link, LinkedIn link, blog link, and section navigation.
+The workflow at `.github/workflows/deploy.yml` installs dependencies, builds the Vite site into `dist/public`, uploads the build as a Pages artifact, and deploys it to the free GitHub Pages environment. No paid domain, server, or hosting subscription is required.
 
-## Publish free with GitHub Pages
+The live site uses the default GitHub Pages HTTPS domain. A custom domain was not added, and HTTPS is enforced by GitHub.
 
-1. Create a GitHub repository and upload the project files.
-2. Run `pnpm install` and `pnpm build` locally.
-3. Publish the generated `dist/public` folder with GitHub Pages, or connect the repository to a free static host such as Netlify or Vercel.
-4. If deploying somewhere other than the Manus WebDev preview, replace the two `/manus-storage/...` paths in `client/src/pages/Home.tsx` with the matching public paths from `portable-assets/` (or upload those files to the host's public asset storage):
-   - `/manus-storage/image1_78af4ea1.png` → your hosted profile image path
-   - `/manus-storage/ASIF_ULLLHAQUE_Resume(3)_3225d389.docx` → your hosted CV path
+## Assets
 
-## Portable assets
-
-The `portable-assets/` folder contains the original CV and the authentic profile photo extracted from it. The hosted WebDev version uses its managed `/manus-storage/` paths so the live preview and CV download remain functional.
+The authentic CV and profile photo are included in `client/public/assets/` and are therefore available to GitHub Pages at `/assets/Asif-Ull-Haque-CV.docx` and `/assets/Asif-Ull-Haque-profile.png`. The portfolio’s CV buttons use the hosted CV asset directly.
 
 ## Verified source notes
 
-The CV verifies the name, summary, location, contact details, education, one role at Natai Clothing Brand, core skills, languages, blog, Facebook profile, and the profile photo. The public LinkedIn page verifies the headline, location, additional skill language, and the course “A Crash Course in Data Science” from United Latino Students Association. No unverified project cards or achievement claims were added.
+The CV verifies the name, summary, location, contact details, BSc (Honours) education, one role at Natai Clothing Brand, core skills, languages, blog, Facebook profile, and profile photo. The public LinkedIn page verifies the headline, location, additional skill language, and the course “A Crash Course in Data Science” from United Latino Students Association. No unverified project cards or achievement claims were added.
