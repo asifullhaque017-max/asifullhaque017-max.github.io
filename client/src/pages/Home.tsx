@@ -87,6 +87,8 @@ const skillGroups = [
   },
 ];
 
+const skillCardColors = ["#0b0061", "#2307f2", "#100372"];
+
 const education = [
   {
     period: "2022 — current",
@@ -267,8 +269,8 @@ function Home() {
           <div className="container">
             <SectionHeading eyebrow="Core skills" title={<>A toolkit for<br /><span>moving forward.</span></>} intro="A broad, verified mix of search, growth, campaign, and visual communication skills." />
             <div className="skills-grid">
-              {skillGroups.map((group) => (
-                <article className="skill-card reveal" key={group.number}>
+              {skillGroups.map((group, index) => (
+                <article className="skill-card reveal" key={group.number} style={{ backgroundColor: skillCardColors[index] }}>
                   <div className="skill-card-top"><span>{group.number}</span><ArrowUpRight size={18} /></div>
                   <h3>{group.title}</h3>
                   <p>{group.description}</p>
@@ -296,7 +298,7 @@ function Home() {
 
         <section className="section learning-section">
           <div className="container learning-layout">
-            <div className="learning-card reveal">
+            <div className="learning-card reveal" style={{backgroundColor: '#ff7070'}}>
               <div className="learning-icon"><Sparkles size={21} /></div>
               <p className="eyebrow eyebrow-dark"><span />Certification</p>
               <h2>A Crash Course<br /><em>in Data Science</em></h2>
