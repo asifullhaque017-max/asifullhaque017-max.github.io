@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 const linkedInUrl = "https://www.linkedin.com/in/asifullhaque";
-const cvUrl = "/manus-storage/ASIF_ULLLHAQUE_Resume(3)_3225d389.docx";
+const cvUrl = "/assets/Asif-Ull-Haque-CV.docx";
 const blogUrl = "https://asifullhaque.blogspot.com";
 const facebookUrl = "https://www.facebook.com/graphene2001";
 
@@ -218,7 +218,7 @@ function Home() {
               <div className="orbit orbit-one" />
               <div className="orbit orbit-two" />
               <div className="portrait-frame" style={{ transform: `translate3d(${pointer.x * 12}px, ${pointer.y * 12}px, 18px) rotate(${4 + pointer.x * 3}deg) rotateX(${-pointer.y * 5}deg)` }}>
-                <img src="/manus-storage/image1_78af4ea1.png" alt="Asif Ull Haque" />
+                <img src="/assets/Asif-Ull-Haque-profile.png" alt="Asif Ull Haque" />
                 <div className="portrait-note">OPEN TO<br /><strong>WORK</strong></div>
               </div>
               <div className="hero-stamp"><span>SEO</span><span>•</span><span>CONTENT</span><span>•</span><span>SOCIAL</span></div>
